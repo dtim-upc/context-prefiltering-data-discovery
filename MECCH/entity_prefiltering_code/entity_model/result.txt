@@ -1,0 +1,4 @@
+este final str and num
+
+AUROC: 0.8894
+AP: 0.8714
