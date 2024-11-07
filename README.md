@@ -1,13 +1,59 @@
 # Contextual Pre-Filtering for Data Discovery
 
-This repository contains the code and resources for implementing a contextual pre-filtering technique in data discovery tasks, specifically utilizing a modified MECCH model to support graph-based structures with entities and attributes.
+This repository contains the code and resources for implementing a contextual pre-filtering technique in data discovery tasks, using a modified MECCH model and data profiling strategies.
 
 ## Repository Structure
 
 - **MECCH**: Contains the modified MECCH code adapted from the [original MECCH repository](https://github.com/cynricfu/MECCH/tree/master). Modifications were made to support our custom graph with entities and attributes.
-- **Helpers**: [Description to be added]
+- **EntityDiscovery**: The **EntityDiscovery** folder includes code for generating the ground truth, building graph-based schemas, and profiling datasets. This code is essential for understanding how the data was processed and prepared for training the MECCH model.
 
 ---
+
+## Data information
+
+The training and testing datasets, along with their graph-based schemas and metadata, are provided for replicating our experiments and training the MECCH model.
+
+### Training Data
+
+The training ground truth files can be downloaded from the following links:
+
+1. **Datasets Zip**: Contains `datasetInfo.csv`, `entityAffinityLinks.csv` and the datasets.
+   - **`datasetInfo.csv`**: Lists each dataset with its corresponding ID and name. The ID is crucial, as the URI resources for the graph-based schemas are constructed using the format:
+     ```
+     http://www.essi.upc.edu/DTIM/NextiaDI/DataSource/Schema/<datasetID>/<resource name>
+     ```
+   - **`entityAffinityLinks.csv`**: Contains `src_node_iri` and `dst_node_iri` columns, indicating affinity links between entities.
+   - **Download Link**: [Training Datasets Zip](https://mydisk.cs.upc.edu/s/AfCn9dskZL9dpja)
+
+2. **Graph-Based Schemas**: Schemas generated from the datasets in TTL format.
+   - **Download Link**: [Graph-Based Schemas](https://mydisk.cs.upc.edu/s/74kTEcE4tB25f9G)
+
+3. **Graph-Based Schemas with Extra Metadata**: Includes additional metadata, such as empty attributes.
+   - **Download Link**: [Graph-Based Schemas with Metadata](https://mydisk.cs.upc.edu/s/ZNEzES7FYScFE52)
+
+
+### Test Data
+
+   The data used for validating our experiments is organized as follows:
+
+   1. **Testing Datasets**: Includes `datasetInfo.csv`, `entityAffinityLinks.csv`, and the dataset files.
+      - **Download Link**: [Testing Datasets](https://mydisk.cs.upc.edu/s/dsgBiTyxkmaFKJj)
+
+   2. **Entity Tables**: Datasets provided as individual entity tables.
+      - **Download Link**: [Entity Tables](https://mydisk.cs.upc.edu/s/ye3t3qgDPtzLTBk)
+
+   3. **Graph-Based Schemas for Testing**: Graph-based schemas in TTL format for testing datasets.
+      - **Download Link**: [Graph-Based Schemas for Testing](https://mydisk.cs.upc.edu/s/k44GXK2BBEfiEQ6)
+
+   4. **Graph-Based Schemas with Extra Metadata**: Contains metadata highlighting empty attributes.
+      - **Download Link**: [Testing Graph-Based Schemas with Metadata](https://mydisk.cs.upc.edu/s/k44GXK2BBEfiEQ6)
+
+   For details on using this data to train and test the MECCH model, refer to the README inside the **MECCH** folder in this repository.   
+
+
+---
+
+
 
 ## MECCH Folder Overview
 
