@@ -16,10 +16,6 @@ Thumbs.db
 
 # Ignore target folder (Scala build)
 target/
-# sbt specific files
-*.sbt
-*.sbt.lock
-
 # Ignore logs
 logs/
 *.log
