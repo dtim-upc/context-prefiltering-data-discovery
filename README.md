@@ -23,6 +23,16 @@ The training ground truth files can be downloaded from the following links:
      http://www.essi.upc.edu/DTIM/NextiaDI/DataSource/Schema/<datasetID>/<resource name>
      ```
    - **`entityAffinityLinks.csv`**: Contains `src_node_iri` and `dst_node_iri` columns, indicating affinity links between entities.
+     - Each row in this file specifies the IRIs of two entity nodes (`src_node_iri` and `dst_node_iri`) in a graph-based schema.  
+     - For example:
+       ```
+       src_node_iri, dst_node_iri
+       http://www.essi.upc.edu/DTIM/NextiaDI/DataSource/Schema/1/movements, http://www.essi.upc.edu/DTIM/NextiaDI/DataSource/Schema/3/movements
+       ```
+       - The number after `Schema` corresponds to the dataset ID listed in `datasetInfo.csv`.  
+       - For instance, `http://.../Schema/1/...` refers to dataset with ID `1`, and `http://.../Schema/3/...` refers to dataset with ID `3`.  
+       - These IRIs belong to resources in the graph-based schema. If you check the graph-based schema for dataset `1`, you’ll find a resource with the IRI `http://www.essi.upc.edu/DTIM/NextiaDI/DataSource/Schema/1/movements`.  
+
    - **Download Link**: [Training Datasets Zip](https://mydisk.cs.upc.edu/s/AfCn9dskZL9dpja)
 
 2. **Graph-Based Schemas**: Schemas generated from the datasets in TTL format.
